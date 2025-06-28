@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'listings',
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -122,8 +125,16 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-from django.db import connection
-print("🎯 Connected to database:", connection.settings_dict['ENGINE'])
-print("🛢️ DB NAME:", connection.settings_dict['NAME'])
-print("👤 USER:", connection.settings_dict.get('USER', ''))
-print("🌐 HOST:", connection.settings_dict.get('HOST', ''))
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': config('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': config('CLOUDINARY_API_KEY'),
+    'API_SECRET': config('CLOUDINARY_API_SECRET'),
+}
+
+# from django.db import connection
+# print("🎯 Connected to database:", connection.settings_dict['ENGINE'])
+# print("🛢️ DB NAME:", connection.settings_dict['NAME'])
+# print("👤 USER:", connection.settings_dict.get('USER', ''))
+# print("🌐 HOST:", connection.settings_dict.get('HOST', ''))
