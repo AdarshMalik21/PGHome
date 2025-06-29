@@ -6,11 +6,42 @@ import Hero from './Components/Main/Hero.jsx';
 import Contact from './Components/Contact/Contact.jsx'
 import Layout from './Layout.jsx';
 import FlatTypeBoys from './Components/FlatType/FlatTypeBoys.jsx';
+import { useEffect } from 'react';
 
 
 
 function App() {
   const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    const testCORS = async () => {
+      console.log('Starting CORS test...');
+      
+      try {
+        const response = await fetch('http://localhost:8000/api/flats/');
+        
+        console.group('[CORS TEST RESULTS]');
+        console.log('✅ Response Status:', response.status);
+        console.log('🔹 Headers:', {
+          'Access-Control-Allow-Origin': response.headers.get('Access-Control-Allow-Origin'),
+          'Access-Control-Allow-Methods': response.headers.get('Access-Control-Allow-Methods')
+        });
+
+        const data = await response.json();
+        console.log('📦 Sample Data (first item):', data[0]);
+        console.groupEnd();
+        
+      } catch (error) {
+        console.group('[CORS TEST FAILED]');
+        console.error('❌ Error:', error.message);
+        console.log('Full error:', error);
+        console.groupEnd();
+      }
+    };
+
+    testCORS();
+  }, []);
+
 
   return (
     <>
