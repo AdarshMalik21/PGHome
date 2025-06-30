@@ -43,7 +43,11 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # React dev server
     "http://127.0.0.1:3000",
-    "https://pghomes.netlify.app/",  # Alternative localhost
+    "https://pghomes.netlify.app",  # Alternative localhost
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://pghomes.netlify.app",
 ]
 CORS_URLS_REGEX = r'^/api/.*$|^/media/.*$' 
 

@@ -9,7 +9,7 @@ const FlatsListing = () => {
   useEffect(() => {
     const fetchFlats = async () => {
       try {
-        const response = await fetch('http://localhost:8000/api/flats/');
+        const response = await fetch('https://djangobackend-production-78d7.up.railway.app/api/flats/');
         if (!response.ok) throw new Error('Failed to fetch flats');
         const data = await response.json();
 
