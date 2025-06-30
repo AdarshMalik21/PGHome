@@ -17,7 +17,7 @@ const Navbar = () => {
         <Link to="/" className="hover:text-blue-300 transition text-gray-900">Home</Link>
         <Link to="/contact" className="hover:text-blue-300 transition text-gray-900">Contact</Link>
         <Link
-          to="/signup"
+          
           className="hover:bg-pink-500 bg-pink-400  px-4 py-2 rounded-md transition text-gray-900 cur"
         >
           Sign Up
