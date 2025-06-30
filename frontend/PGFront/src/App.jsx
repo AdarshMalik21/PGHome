@@ -7,6 +7,7 @@ import Contact from './Components/Contact/Contact.jsx'
 import Layout from './Layout.jsx';
 import FlatTypeBoys from './Components/FlatType/FlatTypeBoys.jsx';
 import { useEffect } from 'react';
+import FlatsListing from './Components/Flatlisting/FlatListing.jsx';
 
 
 
@@ -51,6 +52,7 @@ function App() {
           <Route path="/Hero" element={<Hero />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/FlatTypeBoys" element={<FlatTypeBoys />} />
+          <Route path = "/flats" element = {<FlatsListing />}/>
         </Route>
       </Routes>
     </>

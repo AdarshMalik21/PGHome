@@ -44,6 +44,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # React dev server
     "http://127.0.0.1:3000",  # Alternative localhost
 ]
+CORS_URLS_REGEX = r'^/api/.*$|^/media/.*$' 
 
 # Production whitelist (add domains here when deployed)
 PRODUCTION_DOMAINS = []
@@ -132,6 +133,7 @@ CLOUDINARY_STORAGE = {
     'CLOUD_NAME': config('CLOUDINARY_CLOUD_NAME'),
     'API_KEY': config('CLOUDINARY_API_KEY'),
     'API_SECRET': config('CLOUDINARY_API_SECRET'),
+    'SECURE': True ,
 }
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 

@@ -7,7 +7,7 @@ import landingPageVideo from './assets/landingPageVideo.mp4';
 const Layout = () => {
   return (
    <>
-   <div className="relative min-h-screen text-white">
+   <div className="relative min-h-screen flex flex-col text-white">
       {/* Background Video */}
       <video
         autoPlay
@@ -20,7 +20,7 @@ const Layout = () => {
         Your browser does not support the video tag.
       </video>
    <Navbar />
-   <main className='container mx-auto px-4'>    
+   <main className='container mx-auto px-4 flex-grow'>    
         <Outlet />
     </main>
     <Footer />

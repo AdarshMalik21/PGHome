@@ -4,7 +4,7 @@ import image from '../../assets/image.png'
 
 const Navbar = () => {
   return (
-    <nav className="w-full fixed top-0 left-0 z-50 px-6 py-4 flex items-center justify-between text-white ">
+    <nav className="w-full  top-0 left-0 z-50 px-6 py-4 flex items-center justify-between text-white ">
       <div className="flex items-center gap-4">
         <img src={image} alt="PG Home Logo" className="h-10 rounded-4xl" />
         <div className="text-2xl font-bold text-gray-900">
